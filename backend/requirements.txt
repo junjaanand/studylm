@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+langchain
+langchain-cohere
+cohere
+langchain-groq
+chromadb
+pymupdf
+sqlalchemy
+python-dotenv
+python-multipart

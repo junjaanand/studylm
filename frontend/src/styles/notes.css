@@ -1,0 +1,82 @@
+/* Notes view styles */
+.notes-container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.notes-header h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.notes-header p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.notes-input-row {
+  display: flex;
+  gap: 12px;
+}
+
+.notes-input-row .input {
+  flex: 1;
+}
+
+.notes-result {
+  animation: fadeIn 0.4s ease;
+}
+
+.notes-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.notes-content {
+  margin-bottom: 20px;
+}
+
+.notes-key-points {
+  padding: 16px;
+  background: var(--bg-input);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--accent-primary);
+}
+
+.notes-key-points h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--accent-secondary);
+}
+
+.notes-key-points ul {
+  list-style: none;
+  padding: 0;
+}
+
+.notes-key-points li {
+  padding: 6px 0;
+  padding-left: 20px;
+  position: relative;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+.notes-key-points li::before {
+  content: '•';
+  color: var(--accent-primary);
+  font-weight: bold;
+  position: absolute;
+  left: 4px;
+}

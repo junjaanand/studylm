@@ -1,0 +1,145 @@
+/* Quiz view styles */
+.quiz-container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.quiz-setup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.quiz-setup h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.quiz-setup p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.quiz-setup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 12px;
+}
+
+.quiz-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.quiz-timer {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.quiz-progress {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.quiz-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Results */
+.quiz-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.quiz-score-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.quiz-score-card h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.quiz-score-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-glow);
+}
+
+.quiz-score-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+}
+
+.quiz-score-detail {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.quiz-score-time {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.quiz-results-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quiz-correct {
+  border-left: 3px solid var(--success);
+}
+
+.quiz-wrong {
+  border-left: 3px solid var(--error);
+}
+
+.quiz-result-answer {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  padding: 8px 0;
+}
+
+.quiz-correct-label {
+  color: var(--success);
+}

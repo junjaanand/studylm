@@ -1,0 +1,11 @@
+/* Notebook page styles */
+.notebook {
+  display: flex;
+  min-height: 100vh;
+}
+
+.notebook-main {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 100vh;
+}

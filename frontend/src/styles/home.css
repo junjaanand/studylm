@@ -1,0 +1,91 @@
+/* Home page styles */
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 24px;
+}
+
+.home-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 80px 24px 60px;
+  text-align: center;
+  width: 100%;
+  max-width: 640px;
+}
+
+.home-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.home-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+.home-docs {
+  width: 100%;
+  max-width: 720px;
+  margin-top: 40px;
+}
+
+.home-docs h3 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.home-docs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.home-doc-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px !important;
+  cursor: pointer;
+}
+
+.home-doc-card:hover {
+  border-color: var(--accent-primary);
+  transform: translateX(4px);
+}
+
+.home-doc-icon {
+  font-size: 1.5rem;
+}
+
+.home-doc-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.home-doc-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.home-doc-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.home-doc-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

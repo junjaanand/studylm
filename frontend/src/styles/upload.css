@@ -1,0 +1,68 @@
+/* Upload zone styles */
+.upload-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 64px 40px;
+  border: 2px dashed var(--border-light);
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-align: center;
+  max-width: 520px;
+  width: 100%;
+}
+
+.upload-zone:hover,
+.upload-zone.dragging {
+  border-color: var(--accent-primary);
+  background: var(--bg-card-hover);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.upload-zone.uploading {
+  pointer-events: none;
+  border-color: var(--accent-primary);
+}
+
+.upload-icon {
+  font-size: 3.5rem;
+  margin-bottom: 8px;
+  animation: float 3s ease infinite;
+}
+
+.upload-zone h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.upload-zone p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.upload-formats {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  padding: 4px 12px;
+  background: var(--bg-input);
+  border-radius: 9999px;
+}
+
+.upload-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.upload-progress p {
+  color: var(--accent-secondary);
+  font-weight: 500;
+}
