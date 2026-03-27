@@ -35,8 +35,8 @@ app.include_router(quiz.router, prefix="/api/quiz", tags=["Quiz"])
 @app.on_event("startup")
 async def startup():
     """Initialize database and required directories on startup."""
-    create_tables()
     settings.ensure_directories()
+    create_tables()
 
 
 @app.get("/health")
