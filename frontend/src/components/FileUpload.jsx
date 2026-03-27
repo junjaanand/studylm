@@ -2,6 +2,7 @@
  * FileUpload — Document upload component with drag-and-drop
  */
 import { useState, useRef } from 'react';
+import api from '../api/client.js';
 import '../styles/upload.css';
 
 export default function FileUpload({ onUploadComplete }) {
@@ -40,7 +41,6 @@ export default function FileUpload({ onUploadComplete }) {
     setUploadProgress('Uploading document...');
 
     try {
-      const { default: api } = await import('../api/client.js');
       setUploadProgress('Processing & embedding document...');
       const doc = await api.uploadDocument(file);
       setUploadProgress('Done!');
