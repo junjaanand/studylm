@@ -6,6 +6,7 @@ import '../styles/sidebar.css';
 const features = [
   { id: 'chat', icon: '💬', label: 'Chat Q&A' },
   { id: 'notes', icon: '📝', label: 'Notes' },
+  { id: 'mindmap', icon: '🧠', label: 'Mind Map' },
   { id: 'mcq', icon: '❓', label: 'MCQs' },
   { id: 'summary', icon: '📋', label: 'Summary' },
   { id: 'flashcards', icon: '🃏', label: 'Flashcards' },

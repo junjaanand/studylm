@@ -3,7 +3,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from api.routes import documents, notes, mcq, chat, summary, flashcards, quiz
+from api.routes import documents, notes, mcq, chat, summary, flashcards, quiz, mindmap
 from core.config import settings
 from models.database import create_tables
 
@@ -30,6 +30,7 @@ app.include_router(chat.router, prefix="/api/chat", tags=["Chat"])
 app.include_router(summary.router, prefix="/api/summary", tags=["Summary"])
 app.include_router(flashcards.router, prefix="/api/flashcards", tags=["Flashcards"])
 app.include_router(quiz.router, prefix="/api/quiz", tags=["Quiz"])
+app.include_router(mindmap.router, prefix="/api/mindmap", tags=["MindMap"])
 
 
 @app.on_event("startup")

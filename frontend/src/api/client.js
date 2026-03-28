@@ -83,6 +83,14 @@ const api = {
     });
   },
 
+  // --- Mind Map ---
+  generateMindmap(documentId, topic = null) {
+    return request('/mindmap/generate', {
+      method: 'POST',
+      body: JSON.stringify({ document_id: documentId, topic }),
+    });
+  },
+
   // --- Flashcards ---
   generateFlashcards(documentId, topic = null, numCards = 10) {
     return request('/flashcards/generate', {

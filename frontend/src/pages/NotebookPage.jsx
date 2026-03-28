@@ -9,6 +9,7 @@ import McqView from '../components/McqView';
 import SummaryView from '../components/SummaryView';
 import FlashcardView from '../components/FlashcardView';
 import QuizView from '../components/QuizView';
+import MindmapView from '../components/MindmapView';
 import '../styles/notebook.css';
 
 const tabComponents = {
@@ -18,6 +19,7 @@ const tabComponents = {
   summary: SummaryView,
   flashcards: FlashcardView,
   quiz: QuizView,
+  mindmap: MindmapView,
 };
 
 export default function NotebookPage({ document: doc, onBack }) {
