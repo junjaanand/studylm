@@ -46,7 +46,7 @@ export default function Sidebar({ activeTab, onTabChange, document: doc, onBack 
       </nav>
 
       <div className="sidebar-footer">
-        <p>Powered by Gemini AI</p>
+        <p>Powered by StudyLM</p>
       </div>
     </aside>
   );
