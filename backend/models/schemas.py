@@ -122,3 +122,14 @@ class QuizResult(BaseModel):
     correct_answers: int
     score_percentage: float
     results: list[dict]
+
+
+# --- Mind Map schemas ---
+
+class MindMapRequest(BaseModel):
+    document_id: int
+    topic: Optional[str] = None
+
+
+class MindMapResponse(BaseModel):
+    mermaid_code: str
