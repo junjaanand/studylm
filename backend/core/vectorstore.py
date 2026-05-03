@@ -1,22 +1,30 @@
-"""ChromaDB vector store manager — uses Cohere API for embeddings to save RAM."""
+"""ChromaDB vector store manager — uses Google Gemini API for embeddings."""
 
 import chromadb
-import cohere
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from core.config import settings
 
 def get_chroma_client():
     """Get a persistent ChromaDB client."""
     return chromadb.PersistentClient(path=settings.CHROMA_PATH)
 
+def get_google_embeddings():
+    """Initialize Google Embeddings model."""
+    if not settings.GOOGLE_API_KEY:
+        raise ValueError("GOOGLE_API_KEY is missing in your .env file!")
+    return GoogleGenerativeAIEmbeddings(
+        model=settings.EMBEDDING_MODEL, 
+        google_api_key=settings.GOOGLE_API_KEY
+    )
+
 def add_texts_to_collection(collection_name: str, texts: list[str], metadatas: list[dict] = None):
     """Add texts with their embeddings to a ChromaDB collection."""
     client = get_chroma_client()
     collection = client.get_or_create_collection(name=collection_name)
 
-    # Use Cohere API to drastically lower server RAM usage
-    co = cohere.Client(api_key=settings.COHERE_API_KEY)
-    response = co.embed(texts=texts, model=settings.EMBEDDING_MODEL, input_type="search_document")
-    embeddings = response.embeddings
+    # Use Google Gemini API for high-limit embeddings
+    embeddings_model = get_google_embeddings()
+    embeddings = embeddings_model.embed_documents(texts)
 
     ids = [f"{collection_name}_{i}" for i in range(collection.count(), collection.count() + len(texts))]
 
@@ -39,9 +47,8 @@ def query_collection(collection_name: str, query: str, k: int = 5) -> list[str]:
     if collection.count() == 0:
         return []
 
-    co = cohere.Client(api_key=settings.COHERE_API_KEY)
-    response = co.embed(texts=[query], model=settings.EMBEDDING_MODEL, input_type="search_query")
-    query_emb = response.embeddings[0]
+    embeddings_model = get_google_embeddings()
+    query_emb = embeddings_model.embed_query(query)
 
     results = collection.query(
         query_embeddings=[query_emb],

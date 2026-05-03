@@ -57,8 +57,7 @@ class DocumentService:
         if not chunks:
             raise ValueError("No text chunks found.")
 
-        # Batch chunks to stay under Cohere's 96 chunk API limit per call
-        batch_size = 90
+        batch_size = settings.EMBEDDING_BATCH_SIZE
         for i in range(0, len(chunks), batch_size):
             batch = chunks[i:i + batch_size]
             add_texts_to_collection(collection_name, batch)

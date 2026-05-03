@@ -7,6 +7,7 @@ from api.dependencies import get_db
 from models.document import Document
 from models.schemas import DocumentResponse
 from services.document_service import document_service
+from core.config import settings
 
 router = APIRouter()
 
@@ -14,7 +15,7 @@ router = APIRouter()
 @router.post("/upload", response_model=DocumentResponse)
 async def upload_document(file: UploadFile = File(...), db: Session = Depends(get_db)):
     """Upload and process a document (PDF or text)."""
-    allowed_types = {"pdf", "txt", "md", "text"}
+    allowed_types = settings.ALLOWED_FILE_TYPES
     ext = file.filename.rsplit(".", 1)[-1].lower() if "." in file.filename else ""
 
     if ext not in allowed_types:
