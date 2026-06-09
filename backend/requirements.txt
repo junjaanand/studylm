@@ -1,11 +1,11 @@
 fastapi
 uvicorn
 langchain
-langchain-cohere
-cohere
+langchain-google-genai
 langchain-groq
 chromadb
 pymupdf
 sqlalchemy
 python-dotenv
 python-multipart
+langchain-text-splitters
