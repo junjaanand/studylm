@@ -1,5 +1,6 @@
 """Document upload and management routes."""
 
+import traceback
 from fastapi import APIRouter, UploadFile, File, Depends, HTTPException
 from sqlalchemy.orm import Session
 
@@ -28,6 +29,7 @@ async def upload_document(file: UploadFile = File(...), db: Session = Depends(ge
         doc = await document_service.process_document(file, db)
         return doc
     except Exception as e:
+        traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"Error processing document: {str(e)}")
 
 
